@@ -11,7 +11,6 @@ class App extends Component {
         <Person />
         <Person />
         <Person />
-        <p>Conflict2</p>
       </div>
     );
   }
