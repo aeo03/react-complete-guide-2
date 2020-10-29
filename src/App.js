@@ -4,7 +4,7 @@ import Person from './Person/Person'
 
 class App extends Component {
   state = {
-    person: [
+    persons: [
       {name: "Max", age: 28},
       {name: "Manu", age: 27},
       {name: "Stephanie", age: 26}
@@ -14,7 +14,7 @@ class App extends Component {
   switchNameHandler = (newName) => {
     // console.log('Was Clicked')
     this.setState({
-      person: [
+      persons: [
         {name: newName, age: 28},
         {name: "Manu", age: 27},
         {name: "Stephanie", age: 27}
@@ -29,15 +29,15 @@ class App extends Component {
         <p>This is working now!</p>
         <button onClick={this.switchNameHandler.bind(this, 'Maximilian')} >Switch Name</button>
         <Person 
-          name={this.state.person[0].name} 
-          age={this.state.person[0].age}/>
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}/>
         <Person 
-          name={this.state.person[1].name} 
-          age={this.state.person[1].age}
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
           click={this.switchNameHandler.bind(this, 'Max!!!')}>My Hobbies: Biking</Person>
         <Person 
-          name={this.state.person[2].name} 
-          age={this.state.person[2].age}/>
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}/>
       </div>
     );
   }
