@@ -1,20 +1,20 @@
 import React from 'react';
-import './Person.css'
+
+import classes from './Person.css'
 
 const person = (props) => {
-    const personStyle = {
-        '@media(min-width: 500px)' :  {
-            width: '450px'
-        }
+    let rnd = Math.random()
+
+    if (rnd > 0.7) {
+        throw new Error('Error');
     }
 
-return (
-    <div className="Person" style={personStyle}>
-        <p onClick={props.click}>I'm {props.name} and I am {props.age}!</p>
-        <p>{props.children}</p>
-        <input type="text" onChange={props.changed} value={props.name}/>
-    </div>
-
-)};
+    return (
+        <div className={classes.Person}>
+            <p onClick={props.click}>I'm {props.name} and I am {props.age}!</p>
+            <p>{props.children}</p>
+            <input type="text" onChange={props.changed} value={props.name}/>
+        </div>
+    )};
 
 export default person;
